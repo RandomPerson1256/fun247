@@ -3,11 +3,14 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { RiWhatsappLine } from "react-icons/ri";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const [number, setNumber] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [loading, setLoading] = useState(true);
+
+  const router = useRouter();
 
   const getUrl = async () => {
     try {
@@ -37,7 +40,7 @@ export default function Home() {
   }
 
   return (
-    <div className="relative w-screen h-screen overflow-hidden">
+    <div onClick={()=>router.push(`https://wa.me/${number}`) } className="relative w-screen h-screen overflow-hidden">
       {/* Background blurred image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"

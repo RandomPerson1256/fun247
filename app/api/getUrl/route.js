@@ -2,7 +2,7 @@ import Connection from "@/db/Connection";
 import LASER from "@/db/Main";
 import { NextResponse } from "next/server";
 
-export const revalidate = 0; // this is the new line added
+export const revalidate = 0;
 
 
 export async function GET(req,res){
